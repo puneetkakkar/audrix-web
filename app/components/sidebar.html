@@ -1,0 +1,62 @@
+<div class="left-sidebar" ng-style="leftSidebar">
+  <div class="audrix-logo-wrapper">
+    <div ng-click="openSidebar()" style="cursor: pointer;padding: 6px;margin: 8px;">
+      <img src="/assets/images/audrixLogo-Blue.png" width="45" height="25" style="padding-left: 10px;">
+    </div>
+    <md-button style="display: none;" ng-style="dashLogo">
+      <span id="dashLogo">
+        Audrix
+      </span>
+    </md-button>
+  </div>
+  <div style="padding-top: 10px;">
+    <a class="sidebar-nav-tab" ng-href="/search" ng-style="sidebarNavTab">
+      <i class="material-icons" style="font-size: 30px;vertical-align: middle;" ng-style="sidebarIcons">search</i>
+      <span style="display: none;" ng-style="sidebarTitle">Search</span>
+    </a>
+  </div>
+  <div class="sidebar-nav">
+    <a class="sidebar-nav-tab" ng-href="/browse" ng-style="sidebarNavTab">
+      <i class="material-icons" style="font-size: 30px;vertical-align: middle;" ng-style="sidebarIcons">home</i>
+      <span style="display: none;" ng-style="sidebarTitle">Home</span>
+    </a>
+    <!-- <a class="sidebar-nav-tab" ng-href="/explore" ng-style="sidebarNavTab">
+      <i class="material-icons" style="font-size: 30px;vertical-align: middle;" ng-style="sidebarIcons">explore</i>
+      <span style="display: none;" ng-style="sidebarTitle">Explore</span>
+    </a> -->
+    <!-- <a class="sidebar-nav-tab" ng-style="sidebarNavTab">
+      <i class="material-icons" style="font-size: 30px;vertical-align: middle;" ng-style="sidebarIcons">library_music</i>
+      <span style="display: none;" ng-style="sidebarTitle">Library</span>
+    </a> -->
+    <a class="sidebar-nav-tab" ng-click="startRecommendation()" ng-style="sidebarNavTab">
+      <i class="material-icons" style="font-size: 30px;vertical-align: middle;" ng-style="sidebarIcons">music_note</i>
+      <span style="display: none;" ng-style="sidebarTitle">Recommendations</span>
+    </a>
+  </div>
+  <md-divider style="background:rgba(255,255,255,0.2);"></md-divider>
+  <div class="sidebar-nav">
+    <a class="sidebar-nav-tab" ng-style="sidebarNavTab" ng-click="userLogout()">
+      <i class="material-icons" style="font-size: 30px;vertical-align: middle;" ng-style="sidebarIcons">exit_to_app</i>
+      <span style="cursor: pointer;display: none;" ng-style="sidebarTitle">Logout</span>
+    </a>
+    <a class="sidebar-nav-tab" ng-href="/settings" ng-style="sidebarNavTab">
+      <i class="material-icons" style="font-size: 30px;vertical-align: middle;" ng-style="sidebarIcons">settings</i>
+      <span style="display: none;" ng-style="sidebarTitle">Settings</span>
+    </a>
+  </div>
+  <div class="sidebar-nav-tab"  ng-controller="WebPlayerController">
+    <a ng-href="/profile/{{username}}" style="display: flex;">
+      <div style="margin: auto;" ng-style="userProfileCircle">
+        <div ng-show="fbProfile === true">
+          <img class="profile_dropbtn" src="//graph.facebook.com/{{fbId}}/picture" style="border-radius: 50%;border: 2px solid #0fa8f4;top: 8px;position: relative;" width="23" height="23">
+        </div>
+        <div ng-show="fbProfile === false">
+          <img class="profile_dropbtn" src="/assets/images/default_profile_image.jpg" style="border-radius: 50%;border: 2px solid #0fa8f4;top: 8px;position: relative;" width="23" height="23">
+        </div>
+      </div>
+      <div id="user_name" style="display: none;" ng-style="sidebarUsername">
+        @{{username}}
+      </div>
+    </a>
+  </div>
+</div>

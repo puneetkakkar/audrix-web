@@ -1,0 +1,21 @@
+{
+  "name": "audrix-frontend",
+  "description": "audrix-frontend",
+  "main": "index.html",
+  "authors": [
+    "puneet kakkar"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-hotkeys": "chieffancypants/angular-hotkeys#^1.7.0"
+  }
+}

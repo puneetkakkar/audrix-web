@@ -1,0 +1,158 @@
+<div style="height: 100%;width: 100%;background: #2f4fb0;" ng-show="displayInFullView">
+  <div class="backgroundCss" style="background-image:url({{image}});">
+    <div ng-style="myObj" class="player_full_view_back">
+      <div class="player_full_view_wrapper">
+        <div style="display:flex;padding-left: 10px;">
+          <div class="full_view_audrix_logo_wrapper">
+            <img src="/assets/images/audrixLogo-Blue.png" width="45" height="25" style="position: relative;padding: 6px;margin: 8px;">
+            <md-button  ng-href="/" style="margin: 0;padding: 0;">
+              <span id="full_view_dashLogo">
+                Audrix
+              </span>
+            </md-button>
+          </div>
+          <div style="text-align: right;">
+            <button class="player_close" ng-click="closeFullPlayerView()">
+              <i class="material-icons">close</i>
+            </button>
+          </div>
+        </div>
+        <div class="full_view-thumbnail_viewer_wrapper">
+          <div class="full_view-thumbnail_viewer">
+            <img ng-src="{{image}}" class="full_view-track_thumbnail"></img>
+          </div>
+          <div class="full_view-track-info">
+            <div class="full_view-track-info_name">
+              {{trackTitle}}
+            </div>
+            <div class="full_view-track-other_info">
+              {{trackArtists}} - {{trackAlbum}}
+            </div>
+            <div>
+              <div class="recommendation-block" ng-click="startRecommendation()" ng-class="{recommendation_active: recommendation === true}">
+                <i class="material-icons" style="vertical-align: middle;">playlist_play</i>
+                <span ng-show="!recommendation">Start Auzone</span>
+                <span ng-show="recommendation">Stop Auzone</span>
+              </div>  
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer-web-player" ng-style="footerWebPlayer">
+  <div class="">
+    <audio class="music" preload="metadata">
+      <source src=""></source>
+    </audio>
+  </div>
+  <div class="full_view-playback-bar" style="top:0px !important;" ng-show="displayInFullView">
+    <div style="width:100%;margin-top: 0px;margin-left: 0px;margin-right: 0px;">
+      <div class="full_view-progress-bar">
+        <div class="full_view-progress-bar__bg">
+          <div class="full_view-progress-bar__buffer-slider" style="background: #5b6c71de;"></div>
+          <div class="full_view-progress-bar__slider">
+            <div class="full_view-slider-head"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="nowPlayingBar-container">
+    <div class="now-playing-bar">
+      <div class="now-playing-bar__left" ng-style="nowPlayingBarLeft">
+        <div style="color: hsla(0,0%,100%,.4);transform: translateY(100%);text-align: center;" ng-show="displayInFullView">
+          <span class="full_view-playback-bar__progress-time" style="color: hsla(0,0%,100%,.9);font-size: 14px;">
+            00:00
+          </span>
+          <span>|</span>
+          <span class="full_view-playback-bar__total-progress-time" style="color: hsla(0,0%,100%,.9);font-size: 14px;">
+            00:00
+          </span>
+        </div>
+        <div class="track-thumbnail_wrapper" ng-show="thumbnail">
+          <div class="thumbnail">
+            <img ng-src="{{image}}" class="track_thumbnail" ></img>
+          </div>
+          <div class="track-info">
+            <div class="track-info_name">
+              {{trackTitle}}
+            </div>
+            <div class="track-info_artists">
+              {{trackArtists}}
+            </div>
+            <div class="track-info_album">
+              {{trackAlbum}}
+            </div>
+          </div>
+          <div class="track-info_player" ng-click="openTrackInfoPlayer()">
+            <i class="material-icons">keyboard_arrow_up</i>
+          </div>
+        </div>
+      </div>
+      <div class="now-playing-bar__center">
+        <div class="player-controls">
+          <div class="player-controls__buttons">
+            <!-- <button type="button" name="button" class="control-button">
+              <i class="material-icons">shuffle</i>
+            </button> -->
+            <button type="button" name="button" class="control-button" ng-click="playPreviousTrack()">
+              <i class="material-icons">skip_previous</i>
+            </button>
+            <button type="button" name="button" class="control-button" ng-click="playAudio()" ng-if="!play">
+              <i class="material-icons" id="play-button" style="">pause</i>
+            </button>
+            <button type="button" name="button" class="control-button" ng-click="playAudio()" ng-if="play">
+              <i class="material-icons" id="play-button" style="">play_arrow</i>
+            </button>
+            <button type="button" name="button" class="control-button" ng-click="playNextTrack()" ng-disabled="isLastTrack">
+              <i class="material-icons">skip_next</i>
+            </button>
+            <!-- <button type="button" name="button" class="control-button">
+              <i class="material-icons">repeat</i>
+            </button> -->
+          </div>
+          <div class="playback-bar" ng-show="!displayInFullView">
+            <div class="playback-bar__progress-time">
+              00:00
+            </div>
+            <div style="width:100%;margin-top: 6px;margin-left: 6px;margin-right: 6px;">
+              <div class="progress-bar">
+                <div class="progress-bar__bg">
+                  <div class="progress-bar__buffer-slider" style="background: #5b6c71de;"></div>
+                  <div class="progress-bar__slider">
+                    <div class="slider-head"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="playback-bar__total-progress-time">
+              00:00
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="now-playing-bar__right">
+        <div class="extra-controls" ng-style="extraControls">
+          <div class="volume-bar">
+            <button type="button" name="button" class="control-button" style="top: -2px;" ng-click="soundControl()">
+              <i class="material-icons" ng-show = "volumeUp">volume_up</i>
+              <i class="material-icons" ng-show = "volumeDown">volume_down</i>
+              <i class="material-icons" ng-show = "volumeMute">volume_mute</i>
+              <i class="material-icons" ng-show = "volumeOff">volume_off</i>
+            </button>
+            <div class="progress-bar">
+              <div class="progress-bar__bgv">
+                <div class="progress-bar__fgv"></div>
+                <div class="progress-bar__volumeSlider">
+                  <div class="slider-headv"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

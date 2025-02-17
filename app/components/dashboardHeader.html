@@ -1,0 +1,101 @@
+<div class="audrix-dashboard-wrapper" ng-style="dashboardCss">
+  <div class="md-primary">
+    <md-sidenav class="md-sidenav-left md-primary" md-component-id="left" style="max-width:900px">
+      <md-toolbar layout="row" class="md-primary">
+        <div class="md-toolbar-tools">
+          <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="closeSideNavPanel()">
+            <md-icon class="md-default-theme" class="material-icons">&#xE5CD;</md-icon>
+          </md-button>
+          <h1 style="padding-left:50px;font-weight:bold;letter-spacing:4px;">
+                      Audrix
+                  </h1>
+        </div>
+      </md-toolbar>
+      <md-content id="SidenavContent" layout="row">
+        <md-list style="padding: 15px 60px;font-size:18px;letter-spacing:3px;z-index:1000px;" layout-padding layout-align="start center">
+          <md-list-item>
+            <div>
+              <md-icon class="md-accent" class="material-icons">&#xE88A;</md-icon>
+              <span>Dashboard</span>
+            </div>
+          </md-list-item>
+          <md-list-item>
+            <div>
+              <md-icon class="md-accent" class="material-icons">&#xE7EF;</md-icon>
+              <span>About Us</span>
+            </div>
+          </md-list-item>
+          <md-list-item>
+            <div>
+              <md-icon class="md-accent" class="material-icons">&#xE0BA;</md-icon>
+              <span>Contact Us</span>
+            </div>
+          </md-list-item>
+          <md-list-item>
+            <div>
+              <md-icon class="md-accent" class="material-icons">
+                <i class="fa fa-sign-in"></i>
+              </md-icon>
+              <span>Login</span>
+            </div>
+          </md-list-item>
+          <md-list-item>
+            <div>
+              <md-icon class="md-accent" class="material-icons">&#xE7FE;</md-icon>
+              <span>Sign Up</span>
+            </div>
+          </md-list-item>
+        </md-list>
+      </md-content>
+    </md-sidenav>
+  </div>
+  <div class="">
+    <md-toolbar id="dashboard_toolbar" class="md-primary md-hue-2 ">
+      <div class="md-toolbar-tools" id="dashboard_toolbar_menu_items">
+        <md-button class="" hide-gt-xs aria-label="Side Panel" ng-click="openSideNavPanel()">
+          <md-icon id="hamburger-icon" class="md-default" class="material-icons">&#xE5D2;</md-icon>
+        </md-button>
+        <div class="audrix-logo-wrapper">
+          <img src="/assets/images/audrixLogo-Blue.png" width="45" height="25">
+          <md-button  ng-href="/" >
+            <span id="dashLogo">
+                      Audrix
+            </span>
+          </md-button>
+        </div>
+        <div class="md-toolbar-tools" id="dashboard_toolbar_menu_item" layout="row" layout-sm="row" hide-xs>
+          <!-- <md-button id="dashboard_toolbar_left_item" ng-click="go('/user/dashboard//')">
+                    Dashboard
+                </md-button>
+                <md-button id="dashboard_toolbar_left_item" ng-href>
+                    <a href="#">About Us</a>
+                </md-button>
+                <md-button id="dashboard_toolbar_left_item" ng-href>
+                    <a href="#">Contact Us</a>
+                </md-button> -->
+          <div flex></div>
+          <div class="user-dropdown-wrapper">
+            <div class="profile_dropdown">
+              <div ng-show="fbProfile === true">
+                <img class="profile_dropbtn" src="//graph.facebook.com/{{fbId}}/picture" style="border-radius: 50%;border: 2px solid #a3e174;" width="30" height="30">
+              </div>
+              <div ng-show="fbProfile === false">
+                <img class="profile_dropbtn" src="/assets/images/default_profile_image.jpg" style="border-radius: 50%;border: 2px solid #1bb1fb;" width="30" height="30">
+              </div>
+              <div class="profile_dropdown_content">
+                <div id="user_name">
+                  <span>@{{username}}<span>
+                </div>
+                <md-divider style="background: #a0a0a0;margin-left: 25px;margin-right: 25px;"></md-divider>
+                <a href="">Profile</a>
+                <a href="">Settings</a>
+                <md-divider style="background: #a0a0a0;margin-left: 25px;margin-right: 25px;"></md-divider>
+                <a ng-click="userLogout()" style="cursor: pointer;">Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </md-toolbar>
+  </div>
+</div>

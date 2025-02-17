@@ -1,0 +1,52 @@
+<!-- <div class="auzone-wrapper main-search-view-container" ng-class="{mainOverlay: isSidebarOpen === true}" ng-show="!displayInFullView">
+	<section ng-controller="SearchController">
+		<div>
+			<div class="inputBox">
+				<div class="contentSpacing">
+					<h4 class="inputBox-label">Search for an Artist, Song, Album or Playlist</h4>
+					<input id="searchBox" type="text" name="text" class="inputBox-input" placeholder="Start typing..." ng-change="Search(searchText)" ng-model="searchText">
+				</div>
+			</div>
+		</div>
+		<md-tabs md-border-bottom class="search-nav" >
+			<md-tab label="Top Results">
+				<md-content class="md-padding search-content">
+					<div ng-show="!searchResults">
+						<h1 class="no-resuts-head">No Results</h1>
+					</div>
+					<div class="search-bg-contentSpacing" ng-show="searchResults">
+						<div class="search-wrapper" ng-class="{mainOverlay: isSidebarOpen === true}">
+							<div ng-repeat="track in searchList" flex-xs="100" flex-sm="30" flex-gt-sm="25" class="search_tracklist">
+								<div class="search_track_thumbnail_wrapper">
+									<div class="search_thumbnail_container">
+										<a href="">
+											<img class="search_track_thumbnail" ng-src="{{trackThumbnailBaseUrl}}{{track.trackId}}" alt="{{track.title}}" />
+											<div class="overlay">
+												<div class="icons">
+													<i class="material-icons pauseIcon" style="font-size: 65px;" ng-if="track.isPlaying"  ng-click="clickToPlaySearchedMusic($index,track.trackId,track.md5)">pause</i>
+													<i class="material-icons playIcon" style="font-size: 65px;" ng-if="!track.isPlaying"  ng-click="clickToPlaySearchedMusic($index,track.trackId,track.md5)"> play_arrow </i>  
+												</div>
+											</div>
+										</a>
+									</div>
+									<div style="width: 100%;padding-left: 5px;">
+										<div class="search_track-info_name" title="{{track.title}}">
+											{{track.title}}
+										</div>
+										<div class="search_track-info_name" title="{{track.artist[0]}}">
+											{{track.artist[0]}}
+										</div>
+										<div class="search_track-info_name" title="{{track.album}}">
+											{{track.album}}
+										</div>		
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</md-content>
+			</md-tab>
+		</md-tabs>
+	</section>
+	
+</div> -->

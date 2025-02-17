@@ -1,0 +1,91 @@
+<div id="loginBack">
+  <audrix-header></audrix-header>
+    <div  layout="row" style="padding-top: 110px;padding-bottom: 90px;">
+        <md-card >
+            <md-toolbar id="loginHead" class="">
+                <div class="md-toolbar-tools">
+                    <h2>
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>&nbsp; Signup Form</span>
+                    </h2>
+                </div>
+            </md-toolbar>
+            <md-card-content class="loginPortal">
+                <form name="Form"  method="post">
+                    <div layout="row">
+                        <md-input-container flex="45">
+                            <label>Firstname</label>
+                            <input type="text" name="firstname" ng-model="firstname"  required="" />
+                            <div ng-messages="Form.firstname.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Please enter your firstname.</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container flex="45" flex-offset="5">
+                            <label>Lastname</label>
+                            <input type="text" name="lastname" ng-model="lastname"  required="" />
+                            <div ng-messages="Form.lastname.$error" role="alert">
+                                <div ng-message="required" class="my-message">Please enter your lastname.</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <md-input-container class="md-block">
+                        <label>Username</label>
+                        <input type="text" name="username" ng-model="username"  required="" />
+                        <div ng-messages="Form.username.$error" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Please enter your username.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>Email</label>
+                        <input type="text" name="email" ng-model="email"  required="" />
+                        <div ng-messages="Form.email.$error" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Please enter your email.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>Password</label>
+                        <input type="password" name="password" ng-model="password" required="" md-maxlength="16" />
+                        <div ng-messages="Form.password.$error" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Please enter your password.</div>
+                            <div ng-message="md-maxlength" class="my-message">Too long.</div>
+                        </div>
+                    </md-input-container>
+                    <md-button ng-disabled="!Form.$valid" type="submit" ng-click="userSignup()" class="md-raised login-btn btn-text">&nbsp Signup &nbsp</md-button>
+                    <div style="padding: 1rem;
+                    color: #19a91f;
+                    text-align: center;" >
+                    {{message}}
+                </div>
+                <div style="padding: 0.5rem;
+                    color: #f44336;
+                    text-align: center;" >
+                    {{error}}
+                </div>
+                <p>
+                    Login or Register with:
+                </p>
+                <md-button class="md-raised facebookBtn">
+                    <i class="fab fa-facebook"></i> &nbsp;Facebook
+                </md-button>
+                <md-button class="md-raised googleBtn" ng-click="authenticate('google')">
+                    <i class="fab fa-google"></i> &nbsp; Google+
+                </md-button>
+                <!-- <md-button class="md-raised twitterBtn ">
+                    <i class="fa fa-twitter"></i>
+                    &nbsp;Twitter
+                </md-button> -->
+            </form>
+
+
+            <hr id="separator" />
+
+            <p>
+                Already registered? <a id="signup-links" ng-href="/auth/login">Login</a>
+            </p>
+            <p>
+                Or go <a id="signup-links" ng-href="/">Home</a>
+            </p>
+        </md-card-content>
+    </md-card>
+</div>
+</div>

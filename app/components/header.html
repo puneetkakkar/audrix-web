@@ -1,0 +1,102 @@
+<div class="md-primary">
+  <md-sidenav class="md-sidenav-left md-primary" md-component-id="left" style="max-width:900px">
+    <md-toolbar layout="row" class="md-primary">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="closeSideNavPanel()">
+          <md-icon class="md-default-theme" class="material-icons">&#xE5CD;</md-icon>
+        </md-button>
+        <h1 style="padding-left:50px;font-weight:bold;letter-spacing:4px;">
+                Audrix
+              </h1>
+      </div>
+    </md-toolbar>
+    <md-content id="SidenavContent" layout="row">
+      <md-list style="padding: 15px 60px;font-size:18px;letter-spacing:3px;z-index:1000px;" layout-padding layout-align="start center">
+        <md-list-item>
+          <div>
+            <md-icon class="md-accent" class="material-icons">&#xE88A;</md-icon>
+            <span>Home</span>
+          </div>
+        </md-list-item>
+        <md-list-item>
+          <div>
+            <md-icon class="md-accent" class="material-icons">&#xE7EF;</md-icon>
+            <span>About Us</span>
+          </div>
+        </md-list-item>
+        <md-list-item>
+          <div>
+            <md-icon class="md-accent" class="material-icons">&#xE0BA;</md-icon>
+            <span>Contact Us</span>
+          </div>
+        </md-list-item>
+        <md-list-item>
+          <div>
+            <md-icon class="md-accent" class="material-icons">
+              <i class="fa fa-sign-in"></i>
+            </md-icon>
+            <span>Login</span>
+          </div>
+        </md-list-item>
+        <md-list-item>
+          <div>
+            <md-icon class="md-accent" class="material-icons">&#xE7FE;</md-icon>
+            <span>Sign Up</span>
+          </div>
+        </md-list-item>
+      </md-list>
+    </md-content>
+  </md-sidenav>
+</div>
+<md-toolbar md-scroll-shrink ng-if="true" id="toolbar" class="md-primary md-hue-2">
+  <div class="md-toolbar-tools" id="toolbar_menu_items">
+    <md-button class="" hide-gt-xs aria-label="Side Panel" ng-click="openSideNavPanel()">
+      <md-icon id="hamburger-icon" class="md-default" class="material-icons">&#xE5D2;</md-icon>
+    </md-button>
+    <div class="audrix-logo-wrapper">
+      <img src="/assets/images/audrixLogo-Blue.png" width="48" height="25">
+      <md-button ng-href="/">
+        <span id="dashLogo">
+              Audrix
+            </span>
+      </md-button>
+    </div>
+    <div class="md-toolbar-tools" id="toolbar_menu_item" layout="row" layout-sm="row" hide-xs>
+      <md-button id="toolbar_left_item" ng-href="/">
+        Home
+      </md-button>
+      <md-button id="toolbar_left_item" ng-href>
+        <a href="#">About Us</a>
+      </md-button>
+      <md-button id="toolbar_left_item" ng-href>
+        <a href="#">Contact Us</a>
+      </md-button>
+      <div flex></div>
+      <md-button style="color:#fff;" ng-href="/auth/login" ng-if="!userLoggedIn()">
+        Already a member?
+      </md-button>
+      <div class="profile_dropdown" ng-if="userLoggedIn()">
+        <div ng-show="fbProfile === true">
+          <img class="profile_dropbtn" src={{profilePic}} style="border-radius: 50%;border: 3px solid #1bb1fb;" width="35" height="35">
+        </div>
+        <div ng-show="fbProfile === false">
+          <img class="profile_dropbtn" src="/../../assets/images/default_profile_image.jpg" style="border-radius: 50%;border: 3px solid #1bb1fb;" width="30" height="30">
+        </div>
+        <div class="profile_dropdown_content">
+          <div id="user_name">
+            <span>@{{username}}<span>
+                </div>
+                <md-divider style="background: #a0a0a0;margin-left: 25px;margin-right: 25px;"></md-divider>
+                <a href="/browse">Browse</a>
+                <a href="">Profile</a>
+                <a href="">Settings</a>
+                <md-divider style="background: #a0a0a0;margin-left: 25px;margin-right: 25px;"></md-divider>
+                <a ng-click="logout()" style="cursor: pointer;">Logout</a>
+              </div>
+            </div>
+            <md-button id="toolbar_right_item" ng-href="/auth/signup" ng-if="!userLoggedIn()">
+                Signup
+            </md-button>
+        </div>
+    </div>
+</md-toolbar>

@@ -1,0 +1,104 @@
+<!-- <audrix-dashboard-header></audrix-dashboard-header> -->
+<div class="landing-page-wrapper" style="display: flex;" ng-style="landingPageCss" ng-show="!displayInFullView">
+  <div class="playlist-wrapper" ng-class="{mainOverlay: isSidebarOpen === true}">
+    <!-- <div class="bars_wrapper">
+      <div class="main">
+        <div class="playlist__wrapper">
+          <h3 class="playlist_name">Fresh Hits</h3>
+        </div>
+        <div class="track_list">
+          <div class="track_wrapper" ng-repeat="track in playlist">
+            <div class="track_container">
+              <li class="tracklist_row" ng-class="{active: track.isPlaying === true}">
+                <div class="tracklist-col track-position-col">
+                  <div class="play-pause icon">
+                    <i class="material-icons pauseIcon" ng-if="track.isPlaying" id="track-play-button" ng-click="clickToPlay($index,track.trackId)">pause</i>
+                    <i class="material-icons playIcon" ng-if="!track.isPlaying" id="track-play-button" ng-click="clickToPlay($index,track.trackId)"> play_arrow </i>
+                  </div>
+                  <div class="track-position">
+                    {{$index + 1}}
+                  </div>
+                </div>
+                <div class="tracklist-col track-details">
+                  <span id=title ng-class="{active: track.isPlaying === true}">{{track.title}}</span>
+                  <span id=artist ng-class="{active: track.isPlaying === true}">{{track.artist[0]}}</span>
+                </div>
+                <div class="tracklist-col track-duration">
+                  {{track.duration}}
+                </div>
+              </li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
+    <!-- <div class="latest_tracks_wrapper">
+      <div class="latest_tracks_head">
+        <div>Latest Tracks</div>
+      </div>
+      <div class="latest_trackgrid_wrapper">
+        <div class="latest_tracklist" ng-repeat="track in playlist ">
+          <div class="latest_track_thumbnail_wrapper">
+            <div class="thumbnail_container">
+              <img class="latest_track_thumbnail" ng-src="data:image/png;base64,{{track.picture[0].data}}"></img>
+              <div class="overlay">
+                <div class="icons">
+                  <i class="material-icons pauseIcon" style="font-size: 65px;" ng-if="track.isPlaying"  ng-click="clickToPlay($index,track.trackId,track.md5)">pause</i>
+                  <i class="material-icons playIcon" style="font-size: 65px;" ng-if="!track.isPlaying"  ng-click="clickToPlay($index,track.trackId,track.md5)"> play_arrow </i>
+                </div>
+              </div>
+            </div>
+            <div class="latest_track_info">
+              <div class="track-info_name">
+                {{track.title}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="latest_tracks_head">
+      <div>New Releases</div>
+    </div>
+    <div layout="row" layout-wrap class="latest_tracks_wrapper">
+      <div class="progresscircular-display-block">
+        <div ng-show="progressCircular" class="loader-circular">
+          <md-progress-circular ng-disabled="!progressCircular" class="md-accent" md-diameter="40px">
+          </md-progress-circular>
+        </div>
+      </div>
+      <div ng-repeat="track in playlist" class="latest_tracklist">
+        <div class="latest_track_thumbnail_wrapper">
+          <div class="thumbnail_container">
+            <div>
+              <img
+              class="latest_track_thumbnail"
+              ng-src="{{trackThumbnailBaseUrl}}{{track.trackId}}" alt="{{track.title}}"
+              imageonload
+              responsive
+              loader-img="/assets/images/tail-spin.svg"
+              bg-color="transparent"
+              transition-duration="1s"
+              animation="fillIn"
+              animation-duration="1s"
+              easing="ease-out"
+              />
+            </div>
+            <div class="overlay">
+              <div class="icons">
+                <i class="material-icons pauseIcon" style="font-size: 65px;" ng-if="track.isPlaying"  ng-click="clickToPlay($index,track.trackId,track.md5)">pause</i>
+                <i class="material-icons playIcon" style="font-size: 65px;" ng-if="!track.isPlaying"  ng-click="clickToPlay($index,track.trackId,track.md5)"> play_arrow </i>
+              </div>
+            </div>
+          </div>
+          <div class="landingPage_trackTitle" title="{{track.title}}">
+            {{track.title}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

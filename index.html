@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Audrix">
+
+<head>
+	<title ng-bind="'Audrix - ' + title "></title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="icon" href="/assets/images/audrixLogo-Blue.png">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700,300,200,100|Indie+Flower:400,700,300,200,100|Dosis|Exo+2|Audiowide|Signika+Negative" rel="stylesheet">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.css">
+	<link rel="stylesheet" href="/bower_components/angular-hotkeys/build/hotkeys.min.css">
+	<link rel="stylesheet" href="/assets/css/fs.css">
+	<base href="/">
+	<style type="text/css" media="screen">
+	</style>
+</head>
+
+<body ng-app="Audrix" ng-controller="AudrixAppController" layout="column" ng-cloak id="body">
+	<div layout-padding ng-if="online === false" style="width:100%;height:100%;background-color: #4776E6;color:black;z-index: 102;text-align: center;position: absolute;">
+		<p style="font-size: 2.2em; color:rgba(0, 0, 0, .3);letter-spacing: 1.1px;margin-top: 250px;font-family: 'Roboto', sans-serif;font-weight: 700;">
+			Problem with Internet Connection.
+		</p>
+		<span style="font-size: 2.2em; color:rgba(0, 0, 0, .3);letter-spacing: 1.1px;margin-top: 250px;font-family: 'Roboto', sans-serif;font-weight: 700;">
+			Please try again later.
+		</span>
+	</div>
+	<div id="loader-page" ng-if="bootstrapFlag && online" style="background-color: #386aff;background-image: linear-gradient(180deg,#00a0ee,#386aff 50%);width: 100%;height: 100%;
+	color:#fff;z-index: 1000;position: absolute;">
+
+	<div id="loader" data-text="AUDRIX">
+		AUDRIX
+	</div>
+	<div style="text-align:center;font-family:'Audiowide', cursive;font-size:18px;">
+		Listen what you love.
+	</div>
+	<div id="container" class="container">
+		<!-- <img src="/assets/images/audrixLogo.png" width="320" height="140" style="align-items:center"> -->
+		<div class="circle-container">
+			<div class="circle"></div>
+		</div>
+		<div class="circle-container">
+			<div class="circle"></div>
+		</div>
+		<div class="circle-container">
+			<div class="circle"></div>
+		</div>
+	</div>
+</div>
+
+<div class="container" layout="row" flex>
+	<audrix-sidebar ng-if="userLoggedIn()" ng-class="{sidebar_hide: displayInFullView === true}"></audrix-sidebar>
+	<!-- <audrix-dashboard-header ng-if="userLoggedIn()" ng-class="{sidebar_hide: displayInFullView === true}"></audrix-dashboard-header> -->
+	<div ng-view flex></div>
+	<audrix-web-player ng-class="{full_view : displayInFullView === true }" ng-if="userLoggedIn()"></audrix-web-player>	
+</div>
+
+</div>
+
+
+
+
+<script type="text/javascript" src="/assets/libs/angular/angular.js"></script>
+<script type="text/javascript" src="/assets/libs/angular/angular-route.min.js"></script>
+<script type="text/javascript" src="/assets/libs/angular/angular-animate.min.js"></script>
+<script type="text/javascript" src="/assets/libs/angular/angular-aria.min.js"></script>
+<script type="text/javascript" src="/assets/libs/angular/angular-messages.min.js"></script>
+<script type="text/javascript" src="/assets/libs/angular-material.min.js"></script>
+<script type="text/javascript" src="/assets/libs/angular-local-storage.min.js"></script>
+<script type="text/javascript" src="/assets/libs/ng-infinite-scroll.min.js"></script>
+<script type="text/javascript" src="/assets/libs/jquery-3.2.1.min.js"></script>
+<script src="//connect.facebook.net/en_US/sdk.js"></script>
+<script type="text/javascript" src="app/app.route.js"></script>
+<script type="text/javascript" src="app/components/app.ctrl.js"></script>
+<script type="text/javascript" src="app/shared/audrixDirectives.js"></script>
+<script type="text/javascript" src="app/shared/config.service.js"></script>
+<script type="text/javascript" src="app/shared/audrixServices.js"></script>
+<script type="text/javascript" src="node_modules/satellizer/dist/satellizer.min.js"></script>
+<script type="text/javascript" src="node_modules/ng-file-upload/dist/ng-file-upload.min.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+<script type="text/javascript" src="/bower_components/angular-hotkeys/build/hotkeys.min.js"></script>
+<script type="text/javascript" src="node_modules/ng-image-appear/dist/ng-image-appear.min.js"></script>
+</body>
+
+</html>
