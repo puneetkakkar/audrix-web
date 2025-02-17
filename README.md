@@ -1,4 +1,11 @@
-# Audrix (Music Recommendation System)  
+<p align="center">
+	<img src="./assets/images/audrixLogo-Blue.png" alt="audrix brand" width="400"/>
+</p>
+
+<h1 align="center">AUDRIX - AUDIO RECOMMENDATION MIX PLATFORM</h1>
+
+<br>
+
 #### Problem Statement 
 One of the major problems of recommender systems in general, and music recommender systems in particular is the cold start problem, i.e., when a new user registers to the system or a new item is added to the catalog and the system does not have sufficient data associated with these items/users. In such a case, the system cannot properly recommend existing items to a new user (new user problem) or recommend a new item to the existing users
 
