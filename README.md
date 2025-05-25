@@ -1,24 +1,87 @@
-<p align="center">
-	<img src="./assets/images/audrixLogo-Blue.png" alt="audrix brand" width="400"/>
-</p>
+# Welcome to React Router!
 
-<h1 align="center">AUDRIX - AUDIO RECOMMENDATION MIX PLATFORM</h1>
+A modern, production-ready template for building full-stack React applications using React Router.
 
-<br>
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
 
-#### Problem Statement 
-One of the major problems of recommender systems in general, and music recommender systems in particular is the cold start problem, i.e., when a new user registers to the system or a new item is added to the catalog and the system does not have sufficient data associated with these items/users. In such a case, the system cannot properly recommend existing items to a new user (new user problem) or recommend a new item to the existing users
+## Features
 
-##### Solution
-Extract audio metadata features from the audio signals and use content-based learning of the user interest, and user's friends interest in order to effect recommendation.
+- 🚀 Server-side rendering
+- ⚡️ Hot Module Replacement (HMR)
+- 📦 Asset bundling and optimization
+- 🔄 Data loading and mutations
+- 🔒 TypeScript by default
+- 🎉 TailwindCSS for styling
+- 📖 [React Router docs](https://reactrouter.com/)
 
-### Key features :- 
+## Getting Started
 
-1. **Stream efficiently based on the network bandwidth**
-2. **State-of-the-art streaming player**
-3. **Performant search engine for fast searching**
-4. **Authentication via social auth/Oauth 2.0**
-5. **Rich features for music player** 
-6. **Full screen player support** 
-7. **Support for hotkeys while playing music** 
-7. **Separate recommendation zone with recommendations on the fly using ML algorithms with good accuracy**
+### Installation
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+### Development
+
+Start the development server with HMR:
+
+```bash
+npm run dev
+```
+
+Your application will be available at `http://localhost:5173`.
+
+## Building for Production
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+## Deployment
+
+### Docker Deployment
+
+To build and run using Docker:
+
+```bash
+docker build -t my-app .
+
+# Run the container
+docker run -p 3000:3000 my-app
+```
+
+The containerized application can be deployed to any platform that supports Docker, including:
+
+- AWS ECS
+- Google Cloud Run
+- Azure Container Apps
+- Digital Ocean App Platform
+- Fly.io
+- Railway
+
+### DIY Deployment
+
+If you're familiar with deploying Node applications, the built-in app server is production-ready.
+
+Make sure to deploy the output of `npm run build`
+
+```
+├── package.json
+├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
+├── build/
+│   ├── client/    # Static assets
+│   └── server/    # Server-side code
+```
+
+## Styling
+
+This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+
+---
+
+Built with ❤️ using React Router.
